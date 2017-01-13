@@ -22,6 +22,7 @@ angular.module('vAccordion.config', [])
       addClass: function (element, className, done) {
         var paneContent = angular.element(element[0].querySelector('v-pane-content')),
             paneInner = angular.element(paneContent[0].querySelector('div'));
+        paneContent.css('display', 'block');
 
         var height = paneInner[0].offsetHeight;
 
@@ -34,7 +35,6 @@ angular.module('vAccordion.config', [])
 
         expandAnimation.start().done(function () {
           paneContent.css('max-height', 'none');
-          paneContent.css('display', 'block');
           done();
         });
 
@@ -47,6 +47,7 @@ angular.module('vAccordion.config', [])
       removeClass: function (element, className, done) {
         var paneContent = angular.element(element[0].querySelector('v-pane-content')),
             paneInner = angular.element(paneContent[0].querySelector('div'));
+        paneContent.css('display', 'none');
 
         var height = paneInner[0].offsetHeight;
 
