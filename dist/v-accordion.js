@@ -34,6 +34,7 @@ angular.module('vAccordion.config', [])
 
         expandAnimation.start().done(function () {
           paneContent.css('max-height', 'none');
+          paneContent.css('display', 'block');
           done();
         });
 
