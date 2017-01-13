@@ -22,7 +22,7 @@ angular.module('vAccordion.config', [])
       addClass: function (element, className, done) {
         var paneContent = angular.element(element[0].querySelector('v-pane-content')),
             paneInner = angular.element(paneContent[0].querySelector('div'));
-        paneContent.style.display = "block";
+       
 
         var height = paneInner[0].offsetHeight;
 
@@ -35,20 +35,21 @@ angular.module('vAccordion.config', [])
 
         expandAnimation.start().done(function () {
           paneContent.css('max-height', 'none');
+          paneContent.css('display', 'block');
           done();
         });
 
         return function (isCancelled) {
           if (isCancelled) {
             paneContent.css('max-height', 'none');
-              paneContent.style.display = "none";
+            paneContent.css('display', 'block');
           }
         };
       },
       removeClass: function (element, className, done) {
         var paneContent = angular.element(element[0].querySelector('v-pane-content')),
             paneInner = angular.element(paneContent[0].querySelector('div'));
-        paneContent.style.display = "none";
+
 
         var height = paneInner[0].offsetHeight;
 
@@ -64,7 +65,7 @@ angular.module('vAccordion.config', [])
         return function (isCancelled) {
           if (isCancelled) {
             paneContent.css('max-height', '0px');
-              paneContent.style.display = "block";
+            paneContent.css('display', 'none');
           }
         };
       }
