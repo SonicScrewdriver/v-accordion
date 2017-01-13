@@ -41,6 +41,7 @@ angular.module('vAccordion.config', [])
         return function (isCancelled) {
           if (isCancelled) {
             paneContent.css('max-height', 'none');
+              paneContent.css('display', 'none');
           }
         };
       },
@@ -63,6 +64,7 @@ angular.module('vAccordion.config', [])
         return function (isCancelled) {
           if (isCancelled) {
             paneContent.css('max-height', '0px');
+              paneContent.css('display', 'block');
           }
         };
       }
