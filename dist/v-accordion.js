@@ -35,14 +35,12 @@ angular.module('vAccordion.config', [])
 
         expandAnimation.start().done(function () {
           paneContent.css('max-height', 'none');
-          paneContent.css('display', 'block');
           done();
         });
 
         return function (isCancelled) {
           if (isCancelled) {
             paneContent.css('max-height', 'none');
-            paneContent.css('display', 'block');
           }
         };
       },
@@ -65,7 +63,6 @@ angular.module('vAccordion.config', [])
         return function (isCancelled) {
           if (isCancelled) {
             paneContent.css('max-height', '0px');
-            paneContent.css('display', 'none');
           }
         };
       }
